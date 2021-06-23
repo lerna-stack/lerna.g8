@@ -21,6 +21,9 @@ object Main extends App with AppLogging {
 
   private val config = ConfigFactory.load()
 
+  // Make an warning since the variable is unused.
+  private val unusedValue = 1
+
   val validationErrors = Seq(
     EncryptionConfig(config).validate(),
   ).collect {
