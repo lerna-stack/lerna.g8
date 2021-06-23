@@ -34,7 +34,8 @@ class MyApp(implicit
       fm: Materializer,
   ): Unit = {
     Http()
-      .bindAndHandle(route, interface, port)
+      .newServerAt(interface, port)
+      .bindFlow(route)
       .foreach { serverBinding =>
         addToShutdownHook(typeName, serverBinding)
       }
