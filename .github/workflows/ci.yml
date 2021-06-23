@@ -12,6 +12,9 @@ on:
       - develop
       - 1.x
 
+env:
+  SBT_SCALAC_STRICT_WARNINGS: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
