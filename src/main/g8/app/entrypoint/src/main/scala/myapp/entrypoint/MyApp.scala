@@ -5,7 +5,6 @@ import akka.actor.{ ActorSystem, CoordinatedShutdown }
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.Http.ServerBinding
 import akka.http.scaladsl.server.Route
-import akka.stream.Materializer
 import com.typesafe.config.Config
 import lerna.log.AppLogging
 import lerna.util.time.JavaDurationConverters._
@@ -30,11 +29,10 @@ class MyApp(implicit
     startServer("management", rootRoute.managementRoute, managementInterface, managementPort)
   }
 
-  private[this] def startServer(typeName: String, route: Route, interface: String, port: Int)(implicit
-      fm: Materializer,
-  ): Unit = {
+  private[this] def startServer(typeName: String, route: Route, interface: String, port: Int): Unit = {
     Http()
-      .bindAndHandle(route, interface, port)
+      .newServerAt(interface, port)
+      .bindFlow(route)
       .foreach { serverBinding =>
         addToShutdownHook(typeName, serverBinding)
       }
