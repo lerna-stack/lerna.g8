@@ -6,6 +6,11 @@ myapp に関する注目すべき変更はこのファイルで文書化され�
 
 ## Unreleased
 
-## Version 0.0.0
+- lerna-app-library 2.0.0-80f86b49-SNAPSHOT に更新しました
+- scalatest 3.1.4 に更新しました
+- akka-http 10.2.4 に更新しました
+- akka-cluster の代わりに akka-cluster-typed を使用するようにしました
+
+## Version 1.0.0
 
 - Initial release
