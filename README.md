@@ -41,6 +41,10 @@ If you want to change something about the template,
 you can open `src/main/g8` as an *sbt* project in your favorite editor.
 It will be recognized as a general *sbt* project.
 
+## Changelog
+
+You can see all the notable changes in [CHANGELOG](CHANGELOG.md).
+
 ## How to test the template
 
 Run `sbt test`.
