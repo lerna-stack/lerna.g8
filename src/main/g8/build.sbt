@@ -6,7 +6,7 @@ ThisBuild / name := "myapp"
 ThisBuild / description := "description"
 ThisBuild / version := "1.0.0"
 ThisBuild / organization := "organization"
-ThisBuild / scalaVersion := "2.12.12"
+ThisBuild / scalaVersion := "2.13.4"
 ThisBuild / scalacOptions ++= Seq(
   "-deprecation",
   "-feature",
