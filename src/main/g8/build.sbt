@@ -128,6 +128,7 @@ lazy val `application` = (project in file("app/application"))
       Akka.persistence,
       Akka.cluster,
       Akka.clusterSharding,
+      Akka.clusterTools,
       Akka.persistenceQuery,
       AkkaPersistenceCassandra.akkaPersistenceCassandra,
       Kryo.kryo,
