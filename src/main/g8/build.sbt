@@ -195,6 +195,7 @@ lazy val `testkit` = (project in file("app/testkit"))
   .settings(
     name := "testkit",
     libraryDependencies ++= Seq(
+      Akka.actor,
       Lerna.util,
       Lerna.testkit,
       Expecty.expecty,
