@@ -118,6 +118,7 @@ lazy val `application` = (project in file("app/application"))
   .settings(
     name := "application",
     libraryDependencies ++= Seq(
+      Lerna.akkaEntityReplication,
       Lerna.utilSequence,
       Lerna.utilAkka,
       Lerna.management,
