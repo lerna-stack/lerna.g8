@@ -72,7 +72,7 @@ lazy val `presentation` = (project in file("app/presentation"))
       Akka.stream,
       AkkaHttp.http,
       AkkaHttp.sprayJson,
-      Akka.testKit         % Test,
+      Akka.actorTestKit    % Test,
       AkkaHttp.httpTestKit % Test,
     ),
   )
@@ -92,7 +92,7 @@ lazy val `gateway` = (project in file("app/gateway"))
       Akka.stream,
       AkkaHttp.http,
       AkkaHttp.sprayJson,
-      Akka.testKit         % Test,
+      Akka.actorTestKit    % Test,
       AkkaHttp.httpTestKit % Test,
     ),
   )
@@ -132,7 +132,7 @@ lazy val `application` = (project in file("app/application"))
       AkkaPersistenceCassandra.akkaPersistenceCassandra,
       Kryo.kryo,
       SprayJson.sprayJson,
-      Akka.testKit          % Test,
+      Akka.actorTestKit     % Test,
       Akka.multiNodeTestKit % Test,
       Akka.streamTestKit    % Test,
     ),
