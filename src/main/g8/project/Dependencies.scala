@@ -3,6 +3,7 @@ import sbt._
 object Dependencies {
 
   object Versions {
+    val akkaEntityReplication    = "1.0.0+157-482a23b1-SNAPSHOT"
     val lerna                    = "2.0.0-80f86b49-SNAPSHOT"
     val akka                     = "2.6.12"
     val akkaHttp                 = "10.2.4"
@@ -20,15 +21,16 @@ object Dependencies {
   }
 
   object Lerna {
-    val http         = "com.lerna-stack" %% "lerna-http"          % Versions.lerna
-    val log          = "com.lerna-stack" %% "lerna-log"           % Versions.lerna
-    val management   = "com.lerna-stack" %% "lerna-management"    % Versions.lerna
-    val testkit      = "com.lerna-stack" %% "lerna-testkit"       % Versions.lerna
-    val util         = "com.lerna-stack" %% "lerna-util"          % Versions.lerna
-    val utilAkka     = "com.lerna-stack" %% "lerna-util-akka"     % Versions.lerna
-    val utilSequence = "com.lerna-stack" %% "lerna-util-sequence" % Versions.lerna
-    val validation   = "com.lerna-stack" %% "lerna-validation"    % Versions.lerna
-    val wartCore     = "com.lerna-stack" %% "lerna-wart-core"     % Versions.lerna
+    val akkaEntityReplication = "com.lerna-stack" %% "akka-entity-replication" % Versions.akkaEntityReplication
+    val http                  = "com.lerna-stack" %% "lerna-http"              % Versions.lerna
+    val log                   = "com.lerna-stack" %% "lerna-log"               % Versions.lerna
+    val management            = "com.lerna-stack" %% "lerna-management"        % Versions.lerna
+    val testkit               = "com.lerna-stack" %% "lerna-testkit"           % Versions.lerna
+    val util                  = "com.lerna-stack" %% "lerna-util"              % Versions.lerna
+    val utilAkka              = "com.lerna-stack" %% "lerna-util-akka"         % Versions.lerna
+    val utilSequence          = "com.lerna-stack" %% "lerna-util-sequence"     % Versions.lerna
+    val validation            = "com.lerna-stack" %% "lerna-validation"        % Versions.lerna
+    val wartCore              = "com.lerna-stack" %% "lerna-wart-core"         % Versions.lerna
   }
 
   object Akka {
