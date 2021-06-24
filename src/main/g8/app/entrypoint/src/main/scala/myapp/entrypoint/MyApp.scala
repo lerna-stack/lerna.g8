@@ -44,7 +44,7 @@ class MyApp(implicit
     val coordinatedShutdown = CoordinatedShutdown(actorSystem)
 
     coordinatedShutdown.addTask(CoordinatedShutdown.PhaseServiceUnbind, s"http-unbind-$typeName") { () =>
-      logger.info(s"[$typeName] 終了処理のため、$serverBinding をunbindします")
+      logger.info(s"[$typeName] 終了処理のため、${serverBinding.toString} をunbindします")
 
       serverBinding.unbind().map(_ => Done)
     }
@@ -54,10 +54,10 @@ class MyApp(implicit
         val hardDeadline =
           config.getDuration("myapp.entrypoint.graceful-termination.hard-deadline").asScala
 
-        logger.info(s"[$typeName] 終了処理のため、$serverBinding の graceful terminate を開始します（最大で $hardDeadline 待ちます）")
+        logger.info(s"[$typeName] 終了処理のため、${serverBinding.toString} の graceful terminate を開始します（最大で ${hardDeadline.toString} 待ちます）")
 
         serverBinding.terminate(hardDeadline) map { _ =>
-          logger.info(s"[$typeName] 終了処理のための $serverBinding の graceful terminate が終了しました")
+          logger.info(s"[$typeName] 終了処理のための ${serverBinding.toString} の graceful terminate が終了しました")
 
           Done
         }
