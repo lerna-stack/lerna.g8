@@ -37,7 +37,6 @@ object Dependencies {
     val actor            = "com.typesafe.akka" %% "akka-actor-typed"            % Versions.akka
     val stream           = "com.typesafe.akka" %% "akka-stream"                 % Versions.akka
     val cluster          = "com.typesafe.akka" %% "akka-cluster-typed"          % Versions.akka
-    val clusterTools     = "com.typesafe.akka" %% "akka-cluster-tools"          % Versions.akka
     val clusterSharding  = "com.typesafe.akka" %% "akka-cluster-sharding-typed" % Versions.akka
     val persistence      = "com.typesafe.akka" %% "akka-persistence"            % Versions.akka
     val persistenceQuery = "com.typesafe.akka" %% "akka-persistence-query"      % Versions.akka
