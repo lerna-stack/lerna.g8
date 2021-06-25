@@ -14,7 +14,7 @@ object Dependencies {
     val slick                    = "3.3.2"
     val expecty                  = "0.14.1"
     val janino                   = "3.0.16"
-    val kryo                     = "1.1.5"
+    val kryo                     = "2.1.0"
     val h2                       = "1.4.200"
     val mariadbConnectorJ        = "2.6.2"
     val sprayJson                = "1.3.5"
