@@ -89,7 +89,7 @@ object Dependencies {
   }
 
   object Kryo {
-    val kryo = "io.altoo" %% "akka-kryo-serialization" % Versions.kryo
+    val kryo = "io.altoo" %% "akka-kryo-serialization-typed" % Versions.kryo
   }
 
   object H2 {
