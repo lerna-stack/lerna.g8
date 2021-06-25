@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Unreleased
 ### Changed
+
 #### Dependency updates
 - Update *Scala* to 2.13.4
 - Add *akka-entity-replication* 1.0.0+157-482a23b1-SNAPSHOT
@@ -12,8 +13,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update *scalatest* to 3.1.4
 - Update *akka* to 2.6.12
 - Update *akka-http* to 10.2.4
+- Add *akka-kryo-serialization-typed* 2.1.0
+- Remove the direct dependency *akka-kryo-serialization*
 - Update *sbt-wartremover* to 2.4.13
 - Update *sbt-scoverage* to 1.8.2
+
 #### Use Akka Typed instead of Akka Classic
 - Use *akka-actor-typed* instead of *akka-actor*
 - Use *akka-cluster-typed* instead of *akka-cluster*
