@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update *akka-http* to 10.2.4
 - Add *akka-kryo-serialization-typed* 2.1.0
 - Remove the direct dependency *akka-kryo-serialization*
+- Update *slick* to 3.3.3
 - Update *sbt-wartremover* to 2.4.13
 - Update *sbt-scoverage* to 1.8.2
 
