@@ -8,6 +8,7 @@ object Dependencies {
     val akka                     = "2.6.12"
     val akkaHttp                 = "10.2.4"
     val akkaPersistenceCassandra = "1.0.1"
+    val akkaProjection           = "1.1.0"
     val scalaTest                = "3.1.4"
     val airframe                 = "20.9.0"
     val logback                  = "1.2.3"
@@ -56,6 +57,11 @@ object Dependencies {
   object AkkaPersistenceCassandra {
     val akkaPersistenceCassandra =
       "com.typesafe.akka" %% "akka-persistence-cassandra" % Versions.akkaPersistenceCassandra
+  }
+
+  object AkkaProjection {
+    val eventsourced = "com.lightbend.akka" %% "akka-projection-eventsourced" % Versions.akkaProjection
+    val slick        = "com.lightbend.akka" %% "akka-projection-slick"        % Versions.akkaProjection
   }
 
   object ScalaTest {
