@@ -11,7 +11,7 @@ object Dependencies {
     val scalaTest                = "3.1.4"
     val airframe                 = "20.9.0"
     val logback                  = "1.2.3"
-    val slick                    = "3.3.2"
+    val slick                    = "3.3.3"
     val expecty                  = "0.14.1"
     val janino                   = "3.0.16"
     val kryo                     = "2.1.0"
