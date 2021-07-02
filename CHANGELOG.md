@@ -16,8 +16,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Update *scalatest* to 3.1.4
 - Update *akka* to 2.6.12
 - Update *akka-http* to 10.2.4
-- Add *akka-kryo-serialization-typed* 2.1.0
-- Remove the direct dependency *akka-kryo-serialization*
+- Remove *akka-kryo-serialization*  
+  Use *akka-serialization-jackson* instead.  
+  We'd like to use JSON as a serialization format for persistence.
 - Add *akka-projection-eventsourced* 1.1.0
 - Add *akka-projection-slick* 1.1.0
 - Update *slick* to 3.3.3

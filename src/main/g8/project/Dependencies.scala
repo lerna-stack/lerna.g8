@@ -15,7 +15,6 @@ object Dependencies {
     val slick                    = "3.3.3"
     val expecty                  = "0.14.1"
     val janino                   = "3.0.16"
-    val kryo                     = "2.1.0"
     val h2                       = "1.4.200"
     val mariadbConnectorJ        = "2.6.2"
     val sprayJson                = "1.3.5"
@@ -92,10 +91,6 @@ object Dependencies {
 
   object Janino {
     val janino = "org.codehaus.janino" % "janino" % Versions.janino
-  }
-
-  object Kryo {
-    val kryo = "io.altoo" %% "akka-kryo-serialization-typed" % Versions.kryo
   }
 
   object H2 {

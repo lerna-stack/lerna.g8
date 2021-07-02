@@ -133,7 +133,6 @@ lazy val `application` = (project in file("app/application"))
       AkkaPersistenceCassandra.akkaPersistenceCassandra,
       AkkaProjection.eventsourced,
       AkkaProjection.slick,
-      Kryo.kryo,
       SprayJson.sprayJson,
       Akka.actorTestKit       % Test,
       Akka.multiNodeTestKit   % Test,
