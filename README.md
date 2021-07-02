@@ -5,8 +5,20 @@ A [Giter8][g8] template for a project to be adopting [Lerna Project](https://git
 This project provides a *g8* template for a project to be adopting *Lerna*.
 To create a new project using this template, Use `sbt new` like below.
 
-```shell script
+```shell
+# Create a new project from the `main` branch (stable, the latest).
 sbt new lerna-stack/lerna.g8
+```
+
+If you want to use another version,
+use the following commands according to the purpose.
+
+```shell
+# Create a new project from the `develop` branch (unstable).
+sbt new lerna-stack/lerna.g8 --branch develop
+
+# Create a new project from the `v2020.12.0` tag (stable, may not be the latest).
+sbt new lerna-stack/lerna.g8 --tag v2020.12.0
 ```
 
 ## Parameters
@@ -22,6 +34,18 @@ You can change the below properties to fit your purpose.
 We want to maintain the containing template project as compilable.
 Gitter8's template string processing is powerful,
 but it will be hard to maintain the template project as compilable.
+
+## Versioning Strategy
+Since lerna.g8 provides a combination of third partie's libraries (like a BOM),
+we use [Calendar Versioning](https://calver.org/) rather than [Semantic Versioning](https://semver.org/).
+
+### Branches
+- `main` (default, stable, the latest)
+- `develop` (unstable)
+
+### Tags
+Tag is useful to use a specific stable version.  
+You can check all releases on [Releases · lerna-stack/lerna.g8](https://github.com/lerna-stack/lerna.g8/tags).
 
 ## Template license
 Written in 2020 by TIS Inc.
