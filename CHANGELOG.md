@@ -19,6 +19,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Remove *akka-kryo-serialization*  
   Use *akka-serialization-jackson* instead.  
   We'd like to use JSON as a serialization format for persistence.
+- Add *akka-serialization-jackson* 2.6.12  
+  The version is the same as other Akka modules.
+- Add *jackson* modules (the version is 2.12.3) as direct dependencies  
+  It would be great that all *jackson* modules should be the same version.
 - Add *akka-projection-eventsourced* 1.1.0
 - Add *akka-projection-slick* 1.1.0
 - Update *slick* to 3.3.3

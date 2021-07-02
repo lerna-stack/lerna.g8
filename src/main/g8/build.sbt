@@ -130,6 +130,7 @@ lazy val `application` = (project in file("app/application"))
       Akka.clusterSharding,
       Akka.clusterTools,
       Akka.persistenceQuery,
+      Akka.serializationJackson,
       AkkaPersistenceCassandra.akkaPersistenceCassandra,
       AkkaProjection.eventsourced,
       AkkaProjection.slick,
@@ -138,7 +139,7 @@ lazy val `application` = (project in file("app/application"))
       Akka.multiNodeTestKit   % Test,
       Akka.streamTestKit      % Test,
       Akka.persistenceTestKit % Test,
-    ),
+    ) ++ Jackson.all,
   )
 
 lazy val `read-model` = (project in file("app/read-model"))
@@ -204,6 +205,10 @@ lazy val `testkit` = (project in file("app/testkit"))
       ScalaTest.scalaTest,
       Airframe.airframe,
       WireMock.wireMock,
+      // WireMock が依存する Jackson のバージョンを固定する
+      Jackson.core,
+      Jackson.annotations,
+      Jackson.databind,
     ),
   )
 
