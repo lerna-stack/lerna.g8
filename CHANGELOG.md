@@ -30,6 +30,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
     We don't need to specify the dependency since we use *akka-actor-typed* instead.
 - Add *akka-persistence-testkit*  
     It would be great to test `EventSourcedBehavior`s
+- Use `typed.ActorSystem[T]` instead of classic `ActorSystem`  
+    It is recommended to use `typed.ActorSystem` rather than classic `ActorSystem` for new projects.
 
 ## 1.x
 - Initial release
