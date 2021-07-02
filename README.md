@@ -17,7 +17,7 @@ use the following commands according to the purpose.
 # Create a new project from the `develop` branch (unstable).
 sbt new lerna-stack/lerna.g8 --branch develop
 
-# Create a new project from the `v2020.12.0` tag (stable, but not the latest).
+# Create a new project from the `v2020.12.0` tag (stable, may not be the latest).
 sbt new lerna-stack/lerna.g8 --tag v2020.12.0
 ```
 
@@ -44,7 +44,7 @@ we use [Calendar Versioning](https://calver.org/) rather than [Semantic Versioni
 - `develop` (unstable)
 
 ### Tags
-Tag is useful to use a stable version but not the latest.  
+Tag is useful to use a specific stable version.  
 You can check all releases on [Releases · lerna-stack/lerna.g8](https://github.com/lerna-stack/lerna.g8/tags).
 
 ## Template license
