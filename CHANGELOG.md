@@ -41,5 +41,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Use `typed.ActorSystem[T]` instead of classic `ActorSystem`  
     It is recommended to use `typed.ActorSystem` rather than classic `ActorSystem` for new projects.
 
-## 1.x
+## 2020.12.0
 - Initial release
