@@ -37,7 +37,7 @@ but it will be hard to maintain the template project as compilable.
 
 ## Versioning Strategy
 Since lerna.g8 provides a combination of third partie's libraries (like a BOM),
-we use [Calendar Versioning](https://calver.org/) rather than [Semantic Versioning](https://semver.org/).
+we use [Calendar Versioning](https://calver.org/) `YYYY.MM.MICRO` rather than [Semantic Versioning](https://semver.org/).
 
 ### Branches
 - `main` (default, stable, the latest)
