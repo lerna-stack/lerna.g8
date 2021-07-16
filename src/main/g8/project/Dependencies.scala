@@ -3,46 +3,50 @@ import sbt._
 object Dependencies {
 
   object Versions {
-    val lerna                    = "1.0.0"
-    val akka                     = "2.6.8"
-    val akkaHttp                 = "10.1.12"
+    val akkaEntityReplication    = "2.0.0"
+    val lerna                    = "2.0.0"
+    val akka                     = "2.6.12"
+    val akkaHttp                 = "10.2.4"
     val akkaPersistenceCassandra = "1.0.1"
-    val scalaTest                = "3.0.9"
+    val akkaProjection           = "1.1.0"
+    val scalaTest                = "3.1.4"
     val airframe                 = "20.9.0"
     val logback                  = "1.2.3"
-    val slick                    = "3.3.2"
+    val slick                    = "3.3.3"
     val expecty                  = "0.14.1"
     val janino                   = "3.0.16"
-    val kryo                     = "1.1.5"
     val h2                       = "1.4.200"
     val mariadbConnectorJ        = "2.6.2"
     val sprayJson                = "1.3.5"
+    val jackson                  = "2.12.3"
   }
 
   object Lerna {
-    val http         = "com.lerna-stack" %% "lerna-http"          % Versions.lerna
-    val log          = "com.lerna-stack" %% "lerna-log"           % Versions.lerna
-    val management   = "com.lerna-stack" %% "lerna-management"    % Versions.lerna
-    val testkit      = "com.lerna-stack" %% "lerna-testkit"       % Versions.lerna
-    val util         = "com.lerna-stack" %% "lerna-util"          % Versions.lerna
-    val utilAkka     = "com.lerna-stack" %% "lerna-util-akka"     % Versions.lerna
-    val utilSequence = "com.lerna-stack" %% "lerna-util-sequence" % Versions.lerna
-    val validation   = "com.lerna-stack" %% "lerna-validation"    % Versions.lerna
-    val wartCore     = "com.lerna-stack" %% "lerna-wart-core"     % Versions.lerna
+    val akkaEntityReplication = "com.lerna-stack" %% "akka-entity-replication" % Versions.akkaEntityReplication
+    val http                  = "com.lerna-stack" %% "lerna-http"              % Versions.lerna
+    val log                   = "com.lerna-stack" %% "lerna-log"               % Versions.lerna
+    val management            = "com.lerna-stack" %% "lerna-management"        % Versions.lerna
+    val testkit               = "com.lerna-stack" %% "lerna-testkit"           % Versions.lerna
+    val util                  = "com.lerna-stack" %% "lerna-util"              % Versions.lerna
+    val utilAkka              = "com.lerna-stack" %% "lerna-util-akka"         % Versions.lerna
+    val utilSequence          = "com.lerna-stack" %% "lerna-util-sequence"     % Versions.lerna
+    val validation            = "com.lerna-stack" %% "lerna-validation"        % Versions.lerna
+    val wartCore              = "com.lerna-stack" %% "lerna-wart-core"         % Versions.lerna
   }
 
   object Akka {
-    val slf4j            = "com.typesafe.akka" %% "akka-slf4j"              % Versions.akka
-    val actor            = "com.typesafe.akka" %% "akka-actor"              % Versions.akka
-    val stream           = "com.typesafe.akka" %% "akka-stream"             % Versions.akka
-    val cluster          = "com.typesafe.akka" %% "akka-cluster"            % Versions.akka
-    val clusterTools     = "com.typesafe.akka" %% "akka-cluster-tools"      % Versions.akka
-    val clusterSharding  = "com.typesafe.akka" %% "akka-cluster-sharding"   % Versions.akka
-    val persistence      = "com.typesafe.akka" %% "akka-persistence"        % Versions.akka
-    val persistenceQuery = "com.typesafe.akka" %% "akka-persistence-query"  % Versions.akka
-    val testKit          = "com.typesafe.akka" %% "akka-testkit"            % Versions.akka
-    val streamTestKit    = "com.typesafe.akka" %% "akka-stream-testkit"     % Versions.akka
-    val multiNodeTestKit = "com.typesafe.akka" %% "akka-multi-node-testkit" % Versions.akka
+    val actor                = "com.typesafe.akka" %% "akka-actor-typed"            % Versions.akka
+    val stream               = "com.typesafe.akka" %% "akka-stream"                 % Versions.akka
+    val cluster              = "com.typesafe.akka" %% "akka-cluster-typed"          % Versions.akka
+    val clusterSharding      = "com.typesafe.akka" %% "akka-cluster-sharding-typed" % Versions.akka
+    val clusterTools         = "com.typesafe.akka" %% "akka-cluster-tools"          % Versions.akka
+    val persistence          = "com.typesafe.akka" %% "akka-persistence-typed"      % Versions.akka
+    val persistenceQuery     = "com.typesafe.akka" %% "akka-persistence-query"      % Versions.akka
+    val actorTestKit         = "com.typesafe.akka" %% "akka-actor-testkit-typed"    % Versions.akka
+    val serializationJackson = "com.typesafe.akka" %% "akka-serialization-jackson"  % Versions.akka
+    val streamTestKit        = "com.typesafe.akka" %% "akka-stream-testkit"         % Versions.akka
+    val multiNodeTestKit     = "com.typesafe.akka" %% "akka-multi-node-testkit"     % Versions.akka
+    val persistenceTestKit   = "com.typesafe.akka" %% "akka-persistence-testkit"    % Versions.akka
   }
 
   object AkkaHttp {
@@ -54,6 +58,11 @@ object Dependencies {
   object AkkaPersistenceCassandra {
     val akkaPersistenceCassandra =
       "com.typesafe.akka" %% "akka-persistence-cassandra" % Versions.akkaPersistenceCassandra
+  }
+
+  object AkkaProjection {
+    val eventsourced = "com.lightbend.akka" %% "akka-projection-eventsourced" % Versions.akkaProjection
+    val slick        = "com.lightbend.akka" %% "akka-projection-slick"        % Versions.akkaProjection
   }
 
   object ScalaTest {
@@ -86,10 +95,6 @@ object Dependencies {
     val janino = "org.codehaus.janino" % "janino" % Versions.janino
   }
 
-  object Kryo {
-    val kryo = "io.altoo" %% "akka-kryo-serialization" % Versions.kryo
-  }
-
   object H2 {
     val h2 = "com.h2database" % "h2" % Versions.h2
   }
@@ -100,6 +105,26 @@ object Dependencies {
 
   object WireMock {
     val wireMock = "com.github.tomakehurst" % "wiremock-jre8" % "2.27.2"
+  }
+
+  // NOTE
+  // 依存ライブラリによって、要求する Jackson のバージョンが異なる(例えば `2.11.0` と `2.10.5`)。
+  // 使用しているマイナーバージョンが異なるとランタイムエラーが発生することがあるため、
+  // プロジェクト全体で Jackson のバージョンを固定するほうが良い。
+  // Jackson の マイナーバージョン は後方互換性を維持するように努められているため、
+  // メジャーバージョンが同一である、最新のマイナーバージョンを指定すればよい。
+  // https://github.com/FasterXML/jackson-docs#on-jackson-versioning
+  object Jackson {
+    lazy val all =
+      Seq(core, annotations, databind, dataFormatCbor, datatypeJDK8, datatypeJSR310, moduleScala, moduleParameterNames)
+    val core                 = "com.fasterxml.jackson.core"       % "jackson-core"                   % Versions.jackson
+    val annotations          = "com.fasterxml.jackson.core"       % "jackson-annotations"            % Versions.jackson
+    val databind             = "com.fasterxml.jackson.core"       % "jackson-databind"               % Versions.jackson
+    val dataFormatCbor       = "com.fasterxml.jackson.dataformat" % "jackson-dataformat-cbor"        % Versions.jackson
+    val datatypeJDK8         = "com.fasterxml.jackson.datatype"   % "jackson-datatype-jdk8"          % Versions.jackson
+    val datatypeJSR310       = "com.fasterxml.jackson.datatype"   % "jackson-datatype-jsr310"        % Versions.jackson
+    val moduleScala          = "com.fasterxml.jackson.module"    %% "jackson-module-scala"           % Versions.jackson
+    val moduleParameterNames = "com.fasterxml.jackson.module"     % "jackson-module-parameter-names" % Versions.jackson
   }
 
 }

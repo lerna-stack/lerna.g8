@@ -1,11 +1,11 @@
 package myapp.entrypoint
 
 import akka.Done
-import akka.actor.{ ActorSystem, CoordinatedShutdown }
+import akka.actor.CoordinatedShutdown
+import akka.actor.typed.ActorSystem
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.Http.ServerBinding
 import akka.http.scaladsl.server.Route
-import akka.stream.Materializer
 import com.typesafe.config.Config
 import lerna.log.AppLogging
 import lerna.util.time.JavaDurationConverters._
@@ -13,11 +13,11 @@ import myapp.presentation.RootRoute
 
 @SuppressWarnings(Array("org.wartremover.contrib.warts.MissingOverride"))
 class MyApp(implicit
-    val actorSystem: ActorSystem,
+    val actorSystem: ActorSystem[Nothing],
     rootRoute: RootRoute,
     config: Config,
 ) extends AppLogging {
-  import actorSystem.dispatcher
+  import actorSystem.executionContext
 
   def start(): Unit = {
     val privateInternetInterface = config.getString("myapp.private-internet.http.interface")
@@ -30,11 +30,10 @@ class MyApp(implicit
     startServer("management", rootRoute.managementRoute, managementInterface, managementPort)
   }
 
-  private[this] def startServer(typeName: String, route: Route, interface: String, port: Int)(implicit
-      fm: Materializer,
-  ): Unit = {
+  private[this] def startServer(typeName: String, route: Route, interface: String, port: Int): Unit = {
     Http()
-      .bindAndHandle(route, interface, port)
+      .newServerAt(interface, port)
+      .bindFlow(route)
       .foreach { serverBinding =>
         addToShutdownHook(typeName, serverBinding)
       }
@@ -46,7 +45,7 @@ class MyApp(implicit
     val coordinatedShutdown = CoordinatedShutdown(actorSystem)
 
     coordinatedShutdown.addTask(CoordinatedShutdown.PhaseServiceUnbind, s"http-unbind-$typeName") { () =>
-      logger.info(s"[$typeName] 終了処理のため、$serverBinding をunbindします")
+      logger.info(s"[$typeName] 終了処理のため、${serverBinding.toString} をunbindします")
 
       serverBinding.unbind().map(_ => Done)
     }
@@ -56,10 +55,12 @@ class MyApp(implicit
         val hardDeadline =
           config.getDuration("myapp.entrypoint.graceful-termination.hard-deadline").asScala
 
-        logger.info(s"[$typeName] 終了処理のため、$serverBinding の graceful terminate を開始します（最大で $hardDeadline 待ちます）")
+        logger.info(
+          s"[$typeName] 終了処理のため、${serverBinding.toString} の graceful terminate を開始します（最大で ${hardDeadline.toString} 待ちます）",
+        )
 
         serverBinding.terminate(hardDeadline) map { _ =>
-          logger.info(s"[$typeName] 終了処理のための $serverBinding の graceful terminate が終了しました")
+          logger.info(s"[$typeName] 終了処理のための ${serverBinding.toString} の graceful terminate が終了しました")
 
           Done
         }

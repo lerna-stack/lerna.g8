@@ -37,7 +37,7 @@ but it will be hard to maintain the template project as compilable.
 
 ## Versioning Strategy
 Since lerna.g8 provides a combination of third partie's libraries (like a BOM),
-we use [Calendar Versioning](https://calver.org/) rather than [Semantic Versioning](https://semver.org/).
+we use [Calendar Versioning](https://calver.org/) `YYYY.MM.MICRO` rather than [Semantic Versioning](https://semver.org/).
 
 ### Branches
 - `main` (default, stable, the latest)
@@ -64,6 +64,10 @@ The directory [src/main/g8](src/main/g8) is a `sbt` project to be used as the te
 If you want to change something about the template,
 you can open `src/main/g8` as an *sbt* project in your favorite editor.
 It will be recognized as a general *sbt* project.
+
+## Changelog
+
+You can see all the notable changes in [CHANGELOG](CHANGELOG.md).
 
 ## How to test the template
 
