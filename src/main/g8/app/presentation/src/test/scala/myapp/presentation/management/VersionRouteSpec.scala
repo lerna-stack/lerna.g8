@@ -24,19 +24,15 @@ class VersionRouteSpec extends StandardSpec with ScalatestRouteTest with DISessi
 
     "設定されたバージョン番号を返す" in {
       Get("/version") ~> route.route ~> check {
-        expect {
-          status === StatusCodes.OK
-          responseAs[String] === "0.1.0"
-        }
+        expect(status === StatusCodes.OK)
+        expect(responseAs[String] === "0.1.0")
       }
     }
 
     "設定されたコミットハッシュを返す" in {
       Get("/commit-hash") ~> route.route ~> check {
-        expect {
-          status === StatusCodes.OK
-          responseAs[String] === "8653fe0c05bc1a88e2e5bc96892373e365ffc898"
-        }
+        expect(status === StatusCodes.OK)
+        expect(responseAs[String] === "8653fe0c05bc1a88e2e5bc96892373e365ffc898")
       }
     }
   }
