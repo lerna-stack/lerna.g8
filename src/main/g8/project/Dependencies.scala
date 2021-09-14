@@ -18,6 +18,7 @@ object Dependencies {
     val h2                       = "1.4.200"
     val mariadbConnectorJ        = "2.6.2"
     val sprayJson                = "1.3.5"
+    val wireMock                 = "2.30.1"
     val jackson                  = "2.12.3"
   }
 
@@ -104,7 +105,7 @@ object Dependencies {
   }
 
   object WireMock {
-    val wireMock = "com.github.tomakehurst" % "wiremock-jre8" % "2.27.2"
+    val wireMock = "com.github.tomakehurst" % "wiremock-jre8" % Versions.wireMock
   }
 
   // NOTE
