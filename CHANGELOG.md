@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Unreleased
+### Changed
+- SpecAssertions.expect handles only single assertion.
+  The multiple assertions will not be supported.
 
 
 ## [v2021.7.0] - 2021-7-16
