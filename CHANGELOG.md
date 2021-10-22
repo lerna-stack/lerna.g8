@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## Unreleased
 
 
+## [v2021.10.0] - 2021-10-22
+[v2021.10.0]: https://github.com/lerna-stack/lerna.g8/compare/v2021.7.0...v2021.10.0
+
+### Changed
+- SpecAssertions.expect handles only single assertion.
+  The multiple assertions will not be supported.
+
+### Dependency Updates
+- Update *lerna-app-library* to 3.0.0 from 2.0.0
+- Update *wiremock-jre8* to 2.30.1 from 2.27.2  
+  It would be great to use the same version that *lerna-app-library* uses
+  since it makes us easy to maintain binary compatibility.
+
+
 ## [v2021.7.0] - 2021-7-16
 [v2021.7.0]: https://github.com/lerna-stack/lerna.g8/compare/v2020.12.0...v2021.7.0
 ### Changed

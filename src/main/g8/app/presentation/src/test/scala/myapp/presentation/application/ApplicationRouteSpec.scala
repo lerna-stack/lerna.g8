@@ -17,10 +17,8 @@ class ApplicationRouteSpec extends StandardSpec with ScalatestRouteTest with DIS
 
     "reply OK" in {
       Get("/index") ~> route.route ~> check {
-        expect {
-          status === StatusCodes.OK
-          responseAs[String] === "OK"
-        }
+        expect(status === StatusCodes.OK)
+        expect(responseAs[String] === "OK")
       }
     }
 
