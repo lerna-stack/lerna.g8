@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## Unreleased
 
+### Dependency Updates
+- Update *lerna-app-library* to 3.0.0-6-ca3f2b2b-SNAPSHOT from 3.0.0
+- Update *akka-entity-replication* to 2.0.0+111-c87ff6bc-SNAPSHOT from 2.0.0
+- Update *akka* to 2.6.17 from 2.6.12  
+  *akka-entity-replication* recommends we use the same version of Akka.
+
 
 ## [v2021.10.0] - 2021-10-22
 [v2021.10.0]: https://github.com/lerna-stack/lerna.g8/compare/v2021.7.0...v2021.10.0

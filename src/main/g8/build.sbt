@@ -36,6 +36,9 @@ ThisBuild / fork in Test := true
 // デフォルトのLoggedOutputでは、airframeやkamonが標準エラーに出力するログが[error]とプリフィクスがつき紛らわしいため
 ThisBuild / outputStrategy := Some(StdoutOutput)
 
+// TODO Remove this snapshot repo after stable version release
+ThisBuild / resolvers += Resolver.sonatypeRepo("snapshots")
+
 lazy val root = (project in file("."))
   .enablePlugins(JavaAppPackaging, JavaServerAppPackaging, RpmPlugin, SystemdPlugin)
   .aggregate(
