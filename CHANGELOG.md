@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Dependency Updates
 - Update *lerna-app-library* to 3.0.1 from 3.0.0
-- Update *akka-entity-replication* to 2.0.0+280-0352e28d-SNAPSHOT from 2.0.0
+- Update *akka-entity-replication* to 2.1.0 from 2.0.0
 - Update *akka* to 2.6.17 from 2.6.12  
   *akka-entity-replication* recommends we use the same version of Akka.
 
